@@ -1,0 +1,29 @@
+{% extends "encyclopedia/layout.html" %}
+
+{% block title %}
+    Online College
+{% endblock %}
+
+{% block body %}
+    <h2>Note :</h2>
+    <p>This is a self-help website and it's objective is to provide authentic study material to students. 
+       People may use it and may also add pages to it to help the community. <br> 
+       I have been distressed by the shortage of books in libraries, so I took on this endeavour to provide 
+       best possible material. One advantage may be that students may focus on studies rather than wasting 
+       time in searching notes. <br>
+       Also our Professor may spend their time in developing strategies for innovative learning rather than
+       this notes and exam thing, which kind of sucks. <br>
+       <b>Study well and Good Luck!</b>   
+    </p>    
+
+    <hr>
+
+    <h1>All Pages</h1>
+
+    <ul>
+        {% for entry in entries %}
+            <li><a href="{% url 'lib' entry %}">{{ entry }}</a></li>
+        {% endfor %}
+    </ul>
+
+{% endblock %}
